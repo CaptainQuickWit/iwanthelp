@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
     // Serialize data so the template can read it
     const projects = projectData.map((project) => project.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into template. "req.session" is sort of a little environment where we can set up variables that can only exist within a user's session. "req.session.logged_in" specifies a "logged_in" variable. Then we define a property called logged_in and pass it to res.render so that variable will be rendered. It allows each user have data associated to their visit to the page. Where is this variable coming from? We initialized it at main.handlebars and homepage view includes it.
+
     res.render('homepage', { 
       projects, 
       logged_in: req.session.logged_in 
@@ -69,8 +70,10 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// LOGIN ROUTE:
+
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  // If the user is already logged in, hence req.sessions.logged_in is TRUE redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
