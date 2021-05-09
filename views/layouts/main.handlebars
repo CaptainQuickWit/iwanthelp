@@ -6,16 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MESH</title>
   <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      MESH
+      WELCOME TO MESH
     </h1>
   </header>
+
+  {{!-- HERE COMES THE LOGIN REFERENCES FOR MESH --}}
+  <nav>
+    
+    <a href="/signup">Create an Account</a>
+    
+    <!-- If the user is logged in, show "My Account link" and a logout button -->
+    
+    {{#if logged_in}}
+    <a href="/account">My Account</a>
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    
+    <!-- Otherwise, show a link to login and when we click it we will use router.get /login -->
+    
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
   <main class="container container-fluid mt-5">
-    <!-- Render the contents of the sub layout here -->
+    <!-- All of our views will be placed in that place holder "body" and rendered -->
     {{{ body }}}
   </main>
   <footer>

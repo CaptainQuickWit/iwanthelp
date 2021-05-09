@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS mesh_db;
+CREATE DATABASE mesh_db;
