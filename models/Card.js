@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Card extends Model {}
 
-Project.init(
+Card.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,26 +11,40 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    last_name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
+    // TO DO! email belongs to the school so it must end with -unc.edu
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    school_and_program: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    has_nuts: {
+      type: DataTypes.BOOLEAN,
+    },
+    // TO DO! turn type into .DATEONLY after checking .DATE
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    user_id: {
+    member_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'member',
         key: 'id',
       },
     },
@@ -40,8 +54,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'card',
   }
 );
 
-module.exports = Project;
+module.exports = Card;

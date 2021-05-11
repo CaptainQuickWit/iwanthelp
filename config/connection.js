@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
-
+// sequelize looks for heroku's access path over jawsdb and if it fails then checks our own .env file
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
