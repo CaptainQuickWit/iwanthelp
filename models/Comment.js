@@ -13,35 +13,52 @@ Comments.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    dish_name: {
+
+  // TO DO! limit the number of characters to 500 in descriptions, now it is 255 words?
+    call_comment: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.TEXT,
       allowNull: true,
     },
-    guest_name: {
+    offer_comment: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    has_nuts: {
-      type: DataTypes.BOOLEAN,
+
+  // TO DO! turn type into .DATEONLY after checking .DATE
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    member_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'member',
+        key: 'id',
+      },
+    },
+    card_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'card',
+        key: 'id',
+      },
     },
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'dish',
+    modelName: 'comment',
   }
 );
 
-module.exports = Comments;
+module.exports = Comment;
 
-description: {
-  type: DataTypes.STRING,
-},
+// is_: {
+//   type: DataTypes.BOOLEAN,
+// },
 
     
 

@@ -16,7 +16,7 @@ Note.init(
       allowNull: false,
     },
 
-    // TO DO! limit the number of characters to 500 in descriptions
+    // TO DO! limit the number of characters to 500 in descriptions, now it is 255 words?
     call_description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -41,8 +41,8 @@ Note.init(
     // is_urgent: {
     //   type: DataTypes.BOOLEAN,
     // },
-    
-    member_id: {
+
+    card_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'card',
