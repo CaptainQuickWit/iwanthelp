@@ -1,17 +1,41 @@
 {{!-- NEEDS TO BE UPDATED LATER. IT WILL SHOW ALL POSTED CARDS AND SEARCH FIELD  --}}
 
-<div class="row align-center mb-5">
-  <div>
-    <p>App Description</p>
-  </div>
-  <div>
-    <span>Log In</span>>
-    <span>Create an Account</span>
-  </div>
-</div>
+{{!-- "Search Meshcards" box under header --}}
+<h1> Search Meshcards</h1>
 <div>
-  <h2>Subtitle (image)</h2>
-  <div>
-    <img>
-  </div>
+ <div>
+    <form action="/action_page.php">
+        <input type="checkbox" id="askOnlyCheckbox">
+        <label for="askOnlyCheckbox"> Asks Only</label><br>
+
+        <input type="checkbox" id="offersOnlyCheckbox">
+        <label for="askOnlyCheckbox"> Offers Only</label><br>
+
+        <input type="checkbox" id="skillsCheckbox">
+        <label for="askOnlyCheckbox"> Skills</label><br>
+
+        <input type="checkbox" id="knowledgeCheckbox">
+        <label for="askOnlyCheckbox"> Knowledge</label><br>
+
+        <input type="checkbox" id="ideasCheckbox">
+        <label for="askOnlyCheckbox"> Ideas</label><br>
+
+    </form>
+ </div>
+
+ <div>
+    <h2>Search by Title</h2>
+    <input type="text" name="titleSearch">
+    <input type="submit" value="Submit">
+ </div>
+</div>
+
+
+{{!-- "Board of all cards;"" this is where all of the cards will populate --}}
+
+<div>
+    <div class="card">
+        <h3>TITLE OF CARD</h3>
+        <h4>Description of card</h4>
+    </div>
 </div>
