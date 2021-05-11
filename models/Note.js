@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Card extends Model {}
+class Note extends Model {}
 
-Card.init(
+Note.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,25 +11,21 @@ Card.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    first_name: {
+    call_category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    last_name: {
+
+    // TO DO! limit the number of characters to 500 in descriptions
+    call_description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    
-    // TO DO! email belongs to the school so it must end with --unc.edu
-    email: {
+    offer_category: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
-    school_and_program: {
+    offer_description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -40,10 +36,16 @@ Card.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+
+    // TO DO! URGENT info can be added?
+    // is_urgent: {
+    //   type: DataTypes.BOOLEAN,
+    // },
+    
     member_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'member',
+        model: 'card',
         key: 'id',
       },
     },
@@ -53,8 +55,8 @@ Card.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'card',
+    modelName: 'note',
   }
 );
 
-module.exports = Card;
+module.exports = Note;
