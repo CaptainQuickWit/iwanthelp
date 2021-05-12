@@ -1,15 +1,18 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Member } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+// CREATE NEW MEMBER THROUGH "MEMBER MODEL"
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newMember = await Member.create({
       ...req.body,
-      user_id: req.session.user_id,
+      // ASK ABOUT THIS ID REFERENCE HERE - DOES IT STAY SAME?
+      pass_id: req.session.pass_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newMember);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,15 +20,15 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const memberData = await Member.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        pass_id: req.session.pass_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+    if (!memberData) {
+      res.status(404).json({ message: 'No member found with this id!' });
       return;
     }
 
@@ -34,5 +37,8 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// WE WILL ADD AN UPDATE ROUTE HERE!
+
 
 module.exports = router;

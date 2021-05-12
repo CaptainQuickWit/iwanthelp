@@ -1,0 +1,26 @@
+[
+  {
+    "first_name": "Paul",
+    "last_name": "Simon",
+    "email": "paulsimon@cs.unc.edu",
+    "school_and_program": "computer science - full stack"
+  },
+  {
+    "first_name": "Lucy",
+    "last_name": "Graham",
+    "email": "lucygraham@la.unc.edu",
+    "school_and_program": "liberal arts - multimedia"
+  },
+  {
+    "first_name": "Aretha",
+    "last_name": "Franklin",
+    "email": "arethafranklin@mu.unc.edu",
+    "school_and_program": "music - blues"
+  },
+  {
+    "first_name": "Robin",
+    "last_name": "Williams",
+    "email": "robinwilliams@me.unc.edu",
+    "school_and_program": "medicine - radiology"
+  }
+]

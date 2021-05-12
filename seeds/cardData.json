@@ -1,0 +1,34 @@
+[
+  {
+    "call_category": "knowledge",
+    "call_keywords": "learn scrable",
+    "call_description": "I want to learn scrable like a pro to defeat a friend, please help.",
+    "offer_category": "skills",
+    "offer_keywords": "joggling",
+    "offer_description": "I have been joggling since I was 8 - can train you up to 5 balls or clubs."
+  },
+  {
+    "call_category": "skills",
+    "call_keywords": "how to bicycle",
+    "call_description": "I bought a new bike and ready to learn, weekends are free",
+    "offer_category":"resources",
+    "offer_keywords": "a brand new coach",
+    "offer_description": "If you are interested to have a two seater coach in mint condition, contact me!"
+  },
+  {
+    "call_category": "resources",
+    "call_keywords": "The Diary of Oates",
+    "call_description": "I look for the 2014 edition of 'The Diary of Oates'.",
+    "offer_category": "knowledge",
+    "offer_keywords": "math",
+    "offer_description": "I am very good at math specifically at advanced functions, let me know if you are interested to have me as a tutor."
+  },
+  {
+    "call_category": "knowledge",
+    "call_keywords": "Japanese Idioms",
+    "call_description": "I have a project on Japanese idioms and I like to arrange series of discussion meetings with people from Japan, thanks!",
+    "offer_category": "skills",
+    "offer_keywords": "cooking",
+    "offer_description": "I can prepare delicious sandwiches as requested for lunch and deliver it to you."
+  }
+]

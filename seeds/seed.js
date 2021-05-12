@@ -1,21 +1,39 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { Pass, Member, Card, Comment } = require('../models');
 
-const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const passData = require('./passData.json');
+const memberData = require('./memberData.json');
+const cardData = require('./cardData.json');
+const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
+  // TO DO! CHECK the folowing code with a TA
+  const pass = await Pass.bulkCreate(passData, {
     individualHooks: true,
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+  for (const members of memberData) {
+    await Member.create({
+      ...members,
+      pass_id: pass.id,
+    });
+  }
+
+  for (const card of cardData) {
+    await Card.create({
+      ...card,
+      member_id: members[Math.floor(Math.random() * members.length)].id,
+    });
+  }
+
+  for (const comment of commentData) {
+    await Comment.create({
+      ...comment,
+      card_id: card.id,
+      member_id: members[Math.floor(Math.random() * members.length)].id,
     });
   }
 
