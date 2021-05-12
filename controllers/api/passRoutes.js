@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Pass } = require('../../models');
 
-// CREATE NEW MESH MEMBER THROUGH "PASS MODEL" TO DO - ASK TA!!!!
+// CREATE NEW MESH ACCOUNT THROUGH "PASS MODEL" TO DO - ASK A TA TO CHECK IT!!!!
 router.post('/', async (req, res) => {
   try {
     const passData = await Pass.create({
@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// MESH LOG OUT
+// MESH LOGOUT
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

@@ -1,38 +1,43 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Card } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// ADD TO MESH BOARD
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newCard = await Card.create({
       ...req.body,
-      user_id: req.session.user_id,
+      // ASK ABOUT THIS ID REFERENCE HERE - DOES IT STAY SAME OR member_id?
+      pass_id: req.session.pass_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newCard);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+// REMOVE MESH CARD
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const cardData = await Card.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        pass_id: req.session.pass_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+    if (!cardData) {
+      res.status(404).json({ message: 'No meshcard found with this id!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(cardData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// WE WILL ADD AN UPDATE ROUTE HERE!
 
 module.exports = router;
