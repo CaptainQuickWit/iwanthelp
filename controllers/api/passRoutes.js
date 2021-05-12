@@ -1,17 +1,18 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Pass } = require('../../models');
 
-// MESH SIGN UP
+// CREATE NEW MESH MEMBER THROUGH "PASS MODEL" TO DO - ASK TA!!!!
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const passData = await Pass.create({
       username: req.body.username,
-      email: req.body.email,
       password: req.body.password,
     });
 
+// Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.pass_id = passData.id;
+      req.session.logged_in = true;
 
       res.status(200).json(dbUserData);
     });
@@ -21,19 +22,19 @@ router.post('/', async (req, res) => {
   }
 });
 
-// MESH LOG IN
+// MESH LOGIN
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const passData = await Pass.findOne({ where: { username: req.body.username } });
 
-    if (!userData) {
+    if (!passData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await passData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
