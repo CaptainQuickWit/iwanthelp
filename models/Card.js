@@ -49,7 +49,7 @@ Card.init(
     //   type: DataTypes.BOOLEAN,
     // },
 
-    card_id: {
+    member_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'member',
