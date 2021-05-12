@@ -15,9 +15,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const member of memberData) {
+  for (const members of memberData) {
     await Member.create({
-      ...member,
+      ...members,
       pass_id: pass.id,
     });
   }
@@ -25,7 +25,7 @@ const seedDatabase = async () => {
   for (const card of cardData) {
     await Card.create({
       ...card,
-      member_id: member[Math.floor(Math.random() * members.length)].id,
+      member_id: members[Math.floor(Math.random() * members.length)].id,
     });
   }
 
@@ -33,7 +33,7 @@ const seedDatabase = async () => {
     await Comment.create({
       ...comment,
       card_id: card.id,
-      member_id: member[Math.floor(Math.random() * members.length)].id,
+      member_id: members[Math.floor(Math.random() * members.length)].id,
     });
   }
 
