@@ -11,25 +11,28 @@ Card.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    first_name: {
+    call_category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    last_name: {
+    call_keywords: {
+      type: DataTypes.STRING(25),
+      allowNull: false,
+    },
+    // TO CHECK! string stores up to 255 characters by default. What to do at front end if we want to warn the user - ALERT?
+    call_description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    
-    // TO DO! email belongs to the school so it must end with --unc.edu
-    email: {
+    offer_category: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
-    school_and_program: {
+    offer_keywords: {
+      type: DataTypes.STRING(25),
+      allowNull: false,
+    },
+    offer_description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -40,7 +43,13 @@ Card.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    member_id: {
+
+    // TO DO! URGENT info can be added?
+    // is_urgent: {
+    //   type: DataTypes.BOOLEAN,
+    // },
+
+    card_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'member',

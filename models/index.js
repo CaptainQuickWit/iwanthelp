@@ -1,7 +1,19 @@
+const Pass = require('./Pass');
 const Member = require('./Member');
 const Card = require('./Card');
 const Comment = require('./Comment');
-const Note = require('./Note');
+
+Member.belongsTo(Pass, {
+  foreignKey: 'pass_id',
+  onDelete: 'CASCADE'
+});
+
+Pass.hasOne(Member, {
+  foreignKey: 'pass_id',
+  onDelete: 'CASCADE'
+});
+
+// ________________________________
 
 Card.belongsTo(Member, {
   foreignKey: 'member_id',
@@ -13,6 +25,8 @@ Member.hasMany(Card, {
   onDelete: 'CASCADE'
 });
 
+// ________________________________
+
 Comment.belongsTo(Member, {
   foreignKey: 'member_id',
   onDelete: 'CASCADE'
@@ -23,12 +37,7 @@ Member.hasMany(Comment, {
   onDelete: 'CASCADE'
 });
 
-Card.hasMany(Note, {
-  foreignKey: 'card_id',
-  onDelete: 'CASCADE'
-});
-
-Note.belongsTo(Card, {
+Comment.belongsTo(Card, {
   foreignKey: 'card_id',
   onDelete: 'CASCADE'
 });
@@ -38,9 +47,4 @@ Card.hasMany(Comment, {
   onDelete: 'CASCADE'
 });
 
-Comment.belongsTo(Card, {
-  foreignKey: 'card_id',
-  onDelete: 'CASCADE'
-});
-
-module.exports = { Member, Card, Comment };
+module.exports = { Pass, Member, Card, Comment };
