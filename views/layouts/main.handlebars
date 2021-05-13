@@ -5,22 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MESH</title>
-
-
   <link rel="stylesheet" href="/mesh/public/css/style.css">
     <link rel="stylesheet" type="text/css" href="/mesh/public/css/style.css">
-
 </head>
 
-<body class="container text-center">
-  <header class="container text-center">
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
     <h1>
       WELCOME TO MESH
     </h1>
   </header>
+
   {{!-- HERE COMES THE LOGIN REFERENCES FOR MESH --}}
-  
-  <nav class = "nav justify-content-left">
+  <nav>
     
     <a href="/signup">Create an Account</a>
     
@@ -35,8 +32,7 @@
     
     <a href="/login">Login</a>
     {{/if}}
-  </nav> 
-
+  </nav>
   <main class="container container-fluid mt-5">
     <!-- All of our views will be placed in that place holder "body" and rendered -->
     {{{ body }}}
@@ -74,7 +70,6 @@
       </aside>
     </div>
   </footer>
-  
 </body>
 
 </html>
