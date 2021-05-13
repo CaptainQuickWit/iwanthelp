@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Comment extends Model { }
 
-Project.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,26 +11,32 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+
+  // TO DO! limit the number of characters to 500 in descriptions, now it is 255 words?
+    call_comment: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    description: {
+    offer_comment: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     date_created: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    user_id: {
+    member_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'member',
+        key: 'id',
+      },
+    },
+    card_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'card',
         key: 'id',
       },
     },
@@ -40,8 +46,16 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'comment',
   }
 );
 
-module.exports = Project;
+module.exports = Comment;
+
+// is_: {
+//   type: DataTypes.BOOLEAN,
+// },
+
+    
+
+   

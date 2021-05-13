@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
-// this route will be updated for MESH cards 
-// const projectRoutes = require('./projectRoutes');
+const memberRoutes = require('./memberRoutes');
+const cardRoutes = require('./cardRoutes');
+const commentRoutes = require('./commentRoutes');
 
-router.use('/users', userRoutes);
-// router.use('/projects', projectRoutes);
+router.use('/members', memberRoutes);
+router.use('/cards', cardRoutes);
+router.use('/comments', commentRoutes);
 
 module.exports = router;

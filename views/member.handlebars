@@ -1,0 +1,107 @@
+{{!-- This div is for the top box. I've separated it into two separate divs; two buttons for one and then an ordered list for the others --}}
+
+ <div>
+    <h2>NEW MESHCARD</h2>
+
+    <div>
+      <button>ADD TO MESHBOARD</button>
+      <button>REMOVE MESH CARD</button>
+    </div>
+
+    <div>
+      <ul>
+        <li>
+          <p>Logout</p>
+        </li>
+        <li>
+          <p>Delete Account</p>
+        </li>
+      </ul>
+    </div>
+
+
+{{!-- This div is for the three columns (member details, call or ask, and offer) --}}
+
+<div>
+
+{{!-- first card (member details) --}}
+  <div>
+    <h2>Member Details</h2>
+    <ul>
+      <li>
+        <label>
+          <input type="text" placeholder="First Name"/>
+        <label>
+      </li>
+      <li>
+        <label>
+          <input type="text" placeholder="Last Name"/>
+        <label>
+      </li>
+      <li>
+        <label>
+          <input type="text" placeholder="Email"/>
+        <label>
+      </li>
+      <li>
+        <select>
+          <option value="school">School Name</option>
+        </select>
+      </li>
+      <li>
+        <button>Update</button>
+      </li>
+    </ul>
+  </div>
+
+{{!-- second card (call or ask) --}}
+  <div>
+    <h2>Call or Ask</h2>
+    <ul>
+      <li>
+        <select>
+          <option value="category" placeholder="Category"/>Pick a category</option>
+        </select>
+      </li>
+      <li>
+        <label>
+          <input type="text" placeholder="Keyword"/>
+        <label>
+      </li>
+      <li>
+        <textarea>
+          Describe what you're asking for (max 500 characters)
+        </textarea>
+      </li>
+      <li>
+        <button>Update</button>
+      </li>
+    </ul>
+  </div>
+
+{{!-- third card (offer) --}}
+  <div>
+    <h2>Offer</h2>
+    <ul>
+      <li>
+        <select>
+          <option value="category" placeholder="Category"/>Pick a category</option>
+        </select>
+      </li>
+      <li>
+        <label>
+          <input type="text" placeholder="Keyword"/>
+        <label>
+      </li>
+      <li>
+        <textarea>
+          Describe what you're offering (max 500 characters)
+        </textarea>
+      </li>
+      <li>
+        <button>Update</button>
+      </li>
+    </ul>
+  </div>
+
+</div>

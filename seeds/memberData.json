@@ -1,0 +1,34 @@
+[
+  {
+    "username": "Simon",
+    "password": "password",
+    "first_name": "Paul",
+    "last_name": "Simon",
+    "email": "paulsimon@cs.unc.edu",
+    "school_and_program": "computer science - full stack"
+  },
+  {
+    "username": "Lucy",
+    "password": "password",
+    "first_name": "Lucy",
+    "last_name": "Graham",
+    "email": "lucygraham@la.unc.edu",
+    "school_and_program": "liberal arts - multimedia"
+  },
+  {
+    "username": "Aretha",
+    "password": "password",
+    "first_name": "Aretha",
+    "last_name": "Franklin",
+    "email": "arethafranklin@mu.unc.edu",
+    "school_and_program": "music - blues"
+  },
+  {
+    "username": "Robin",
+    "password": "password",
+    "first_name": "Robin",
+    "last_name": "Williams",
+    "email": "robinwilliams@me.unc.edu",
+    "school_and_program": "medicine - radiology"
+  }
+]

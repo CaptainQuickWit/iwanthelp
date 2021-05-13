@@ -1,0 +1,58 @@
+{{!-- shows the meshcard that is displayed once a card is clicked --}}
+
+<div class="mesh-card">
+  <div class="mesh-card-header">
+    <!-- Below we are rendering the name of one mesh card using a Handlebars.js expression -->
+    {{card_name}}
+  </div>
+</div>
+
+{{!-- Add comment field --}}
+<div class="comment-field">
+    <form>
+        Name: <input type="text" name="usrname">
+    </form>
+
+    <textarea>
+        Add a comment (up to 500 characters)
+    </textarea>
+    
+    <input type="submit">
+</div>
+
+
+{{!-- Contact Info Field --}}
+<div class="contact-info-container">
+  <div>
+    <h2>
+      Contact Info
+    </h2>
+  </div>
+    <div>
+      <ol>
+        <li>
+          Name:
+        </li>
+        <li>
+          Email:
+        </li>
+        <li>
+          Phone Number:
+        </li>
+        <li>
+          School-Program:
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+
+{{!-- Buttons div: Add comment, update comment, save comment, mesh board, logout --}}
+<div class="buttons">
+    <button>Add Comment</button>
+    <button>Update Comment</button> 
+    <button>Save Comment</button>
+    <button>Go back to Meshboard</button>
+    <button>Logout</button>
+</div>

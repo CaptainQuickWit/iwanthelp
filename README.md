@@ -36,6 +36,14 @@ https://github.com/AranATA<br>
 
 ***
 
+Wireframe representation of the functionality of the MESH app:<br>
+<br>
+
+![alt text](/public/images/wireframe.png)
+
+<br>
+<br>
+
 Under the link below you will find a walkthrough video that demonstrates the functionality of the app. <br>
 If the video appears out of focus please hit the space bar twice.
 
