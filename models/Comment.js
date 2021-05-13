@@ -1,5 +1,3 @@
-// Here is where we set up our Dish model, for when we are ready to connect to a database in future activities. 
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -23,10 +21,8 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-
-  // TO DO! turn type into .DATEONLY after checking .DATE
     date_created: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },

@@ -1,7 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Member extends Model {}
+class Member extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
  Member.init(
   {
     id: {
@@ -9,6 +14,17 @@ class Member extends Model {}
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
     },
     first_name: {
       type: DataTypes.STRING,
@@ -32,22 +48,26 @@ class Member extends Model {}
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    // TO DO! turn type into .DATEONLY after checking .DATE
     date_created: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    },
-    pass_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'pass',
-        key: 'id',
+    },    
+  },
+  
+  // Hooks are automatic methods that run during various phases of the Pass Model lifecycle
+  // In this case, before a Pass is created or updated, we will automatically hash their password
+  {
+    hooks: {
+      beforeCreate: async (newMemberData) => {
+        newMemberData.password = await bcrypt.hash(newMemberData.password, 10);
+        return newMemberData;
+      },
+      beforeUpdate: async (updatedMemberData) => {
+        updatedMemberData.password = await bcrypt.hash(updatedMemberData.password, 10);
+        return updatedMemberData;
       },
     },
-  },
-  {
     sequelize,
     timestamps: false,
     freezeTableName: true,

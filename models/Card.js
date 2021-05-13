@@ -36,10 +36,8 @@ Card.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    // TO DO! turn type into .DATEONLY after checking .DATE
     date_created: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },

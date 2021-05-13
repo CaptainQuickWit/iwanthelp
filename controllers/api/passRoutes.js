@@ -4,14 +4,14 @@ const { Pass } = require('../../models');
 // CREATE NEW MESH ACCOUNT THROUGH "PASS MODEL" TO DO - ASK A TA TO CHECK IT!!!!
 router.post('/', async (req, res) => {
   try {
-    const passData = await Pass.create({
+    const memberData = await Member.create({
       username: req.body.username,
       password: req.body.password,
     });
 
 // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
-      req.session.pass_id = passData.id;
+      req.session.member_id = memberData.id;
       req.session.logged_in = true;
 
       res.status(200).json(dbUserData);

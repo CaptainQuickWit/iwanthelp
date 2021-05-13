@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, Card, Member, Pass } = require('../models');
+const { Comment, Card, Member } = require('../models');
 const withAuth = require('../utils/auth');
 
 // RENDERS "HOMEPAGE" (MESHBOARD) PAGE (homepage.handlebars)
@@ -62,15 +62,14 @@ router.get('/meshcard/:id', async (req, res) => {
 router.get('/member', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const passData = await Pass.findByPk(req.session.pass_id, {
+    const memberData = await Member.findByPk(req.session.member_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Member }],
+      include: [{ model: Card }],
     });
 
-    const pass = passData.get({ plain: true });
-// ASK THIS BIT HERE TO TA!
+    const member = memberData.get({ plain: true });
     res.render('member', {
-      ...pass,
+      ...member,
       logged_in: true
     });
   } catch (err) {
