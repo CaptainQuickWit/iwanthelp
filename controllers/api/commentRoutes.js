@@ -7,8 +7,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,
-      // ASK ABOUT THIS ID REFERENCE HERE - DOES IT STAY SAME OR card_id?
-      pass_id: req.session.pass_id,
+      member_id: req.session.member_id,
     });
 
     res.status(200).json(newComment);
@@ -23,7 +22,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     const commentData = await Comment.destroy({
       where: {
         id: req.params.id,
-        pass_id: req.session.pass_id,
+        member_id: req.session.member_id,
       },
     });
 
