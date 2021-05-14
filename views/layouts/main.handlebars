@@ -22,6 +22,7 @@
 <style>
     body * { margin-top: 20px; min-height: 50px;}
     #row2,#row3,#row4{border: 5px solid #bfbfbf; border-radius: 15px; }
+    nav * {display: block; border: 5px solid #bfbfbf; border-radius: 15px; padding: 20px; margin-bottom: 20px;}
 
 </style>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -70,7 +71,7 @@
         <div class="col-12 col-md-4">
 
           <!-- divider contains log in/out/create account links as vertical flex box-->
-          <div class="d-column" style="order: 5px solid #bfbfbf; border-radius: 15px; ">
+          <div class="d-column" >
               {{#if logged_in}}
               <nav>
                 <a href="/member">My Account</a>
@@ -94,10 +95,12 @@
     </section>
 
     <!--THIS IS ROW 3 of 4-->
-    <section id="row3">
+    <section style="background-color: #d9d9d9" id="row3">
       <main class="container-fluid" >
         <!-- All of our views will be placed in that place holder "body" and rendered -->
+        
         {{{ body }}}
+        
       </main>
     </section>
 
