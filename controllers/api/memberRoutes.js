@@ -96,7 +96,6 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-// WE WILL ADD AN UPDATE ROUTE HERE!
-
+// WE WILL ADD AN UPDATE ACCOUNT ROUTE HERE!
 
 module.exports = router;

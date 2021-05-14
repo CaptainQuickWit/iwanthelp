@@ -51,11 +51,3 @@ Comment.init(
 );
 
 module.exports = Comment;
-
-// is_: {
-//   type: DataTypes.BOOLEAN,
-// },
-
-    
-
-   

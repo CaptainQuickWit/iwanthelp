@@ -7,10 +7,11 @@ router.get('/', async (req, res) => {
   try {
     // Get all cards and JOIN with  data
     const cardData = await Card.findAll({
+      attributes: { exclude: ['call_description', 'offer_description'] },
       include: [
         {
           model: Member,
-          attributes: ['first_name', 'last_name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -37,15 +38,16 @@ router.get('/meshcard/:id', async (req, res) => {
       include: [
         {
           model: Member,
-          attributes: ['first_name', 'last_name', 'email', 'school_and_program', 'date_created'],
+          attributes: { exclude: ['password'] }
         },
         {
           model: Comment,
-          attributes: ['call_comment', 'offer_comment', 'member_id', 'card_id'],
+          // attributes: ['call_comment', 'offer_comment', 'member_id', 'card_id'],
         },
       ],
     });
 
+    // ASK!!! WHY THIS IS DIFFERENT THAN THE SERIALIZE ABOVE - BECAUSE WE HAVE MANY CARDS VS SINGLE CARD?
     const card = cardData.get({ plain: true });
 
     res.render('meshcard', {

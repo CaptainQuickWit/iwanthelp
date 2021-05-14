@@ -1,3 +1,4 @@
+// CHECK WITH HANDLEBARS
 // LOGIN (revised)
 const loginFormHandler = async (event) => {
   event.preventDefault();
