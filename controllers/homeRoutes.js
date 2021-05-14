@@ -90,6 +90,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// For the "MESHBOARD-RESULTS" PAGE ('/meshboard-results') Can we use the homepage.handlebars?
+// For the "RESULTS" PAGE ('/results') Can we use the homepage.handlebars?
 
 module.exports = router;
