@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment, Card, Member } = require('../models');
 const withAuth = require('../utils/auth');
 
-// RENDERS "HOMEPAGE" (MESHBOARD) PAGE (homepage.handlebars)
+// RENDERS "HOMEPAGE" (MESHBOARD) PAGE (meshboard.handlebars)
 router.get('/', async (req, res) => {
   try {
     // Get all cards and JOIN with  data
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template. "req.session" is sort of a little environment where we can set up variables that can only exist within a user's session. "req.session.logged_in" specifies a "logged_in" variable. Then we define a property called logged_in and pass it to res.render so that variable will be rendered. It allows each user have data associated to their visit to the page. Where is this variable coming from? We initialized it at main.handlebars and homepage view includes it.
 
     // HOMEPAGE.HANDLEBARS has the view to our meshboard (rename or delete meshboard.handlebars)
-    res.render('homepage', { 
+    res.render('meshboard', { 
       cards, 
       logged_in: req.session.logged_in 
     });
