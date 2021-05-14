@@ -16,8 +16,16 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
+    // Serialize data so the template can read it. This is the "cards" we use at meshboard.handlebars. 
     const cards = cardData.map((card) => card.get({ plain: true }));
+    console.log(cards);
+
+    const cardInfo = cards.map((card) => {
+    return {card_category: card.call_category, call_keywords: card.call_keywords, username: member.username}
+    });
+    console.log(cardInfo);
+
+
 
     // Pass serialized data and session flag into template. "req.session" is sort of a little environment where we can set up variables that can only exist within a user's session. "req.session.logged_in" specifies a "logged_in" variable. Then we define a property called logged_in and pass it to res.render so that variable will be rendered. It allows each user have data associated to their visit to the page. Where is this variable coming from? We initialized it at main.handlebars and homepage view includes it.
 
