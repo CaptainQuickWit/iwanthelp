@@ -2,15 +2,16 @@ const router = require('express').Router();
 const { Comment, Card, Member } = require('../models');
 const withAuth = require('../utils/auth');
 
-// RENDERS "HOMEPAGE" (MESHBOARD) PAGE (homepage.handlebars)
+// RENDERS "HOMEPAGE" (MESHBOARD) PAGE (meshboard.handlebars)
 router.get('/', async (req, res) => {
   try {
     // Get all cards and JOIN with  data
     const cardData = await Card.findAll({
+      attributes: { exclude: ['call_description', 'offer_description'] },
       include: [
         {
           model: Member,
-          attributes: ['first_name', 'last_name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -21,7 +22,7 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template. "req.session" is sort of a little environment where we can set up variables that can only exist within a user's session. "req.session.logged_in" specifies a "logged_in" variable. Then we define a property called logged_in and pass it to res.render so that variable will be rendered. It allows each user have data associated to their visit to the page. Where is this variable coming from? We initialized it at main.handlebars and homepage view includes it.
 
     // HOMEPAGE.HANDLEBARS has the view to our meshboard (rename or delete meshboard.handlebars)
-    res.render('homepage', { 
+    res.render('meshboard', { 
       cards, 
       logged_in: req.session.logged_in 
     });
@@ -37,15 +38,16 @@ router.get('/meshcard/:id', async (req, res) => {
       include: [
         {
           model: Member,
-          attributes: ['first_name', 'last_name', 'email', 'school_and_program', 'date_created'],
+          attributes: { exclude: ['password'] }
         },
         {
           model: Comment,
-          attributes: ['call_comment', 'offer_comment', 'member_id', 'card_id'],
+          // attributes: ['call_comment', 'offer_comment', 'member_id', 'card_id'],
         },
       ],
     });
 
+    // ASK!!! WHY THIS IS DIFFERENT THAN THE SERIALIZE ABOVE - BECAUSE WE HAVE MANY CARDS VS SINGLE CARD?
     const card = cardData.get({ plain: true });
 
     res.render('meshcard', {
@@ -88,6 +90,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// For the "MESHBOARD-RESULTS" PAGE ('/meshboard-results') Can we use the homepage.handlebars?
+// For the "RESULTS" PAGE ('/results') Can we use the homepage.handlebars?
 
 module.exports = router;

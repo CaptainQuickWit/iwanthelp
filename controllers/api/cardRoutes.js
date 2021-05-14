@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Card } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// ADD TO MESH BOARD
+// ADD MESH CARD
 router.post('/', withAuth, async (req, res) => {
   try {
     const newCard = await Card.create({
