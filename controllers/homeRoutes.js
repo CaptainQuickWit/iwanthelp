@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all cards and JOIN with  data
     const cardData = await Card.findAll({
-      attributes: { exclude: ['call_description', 'offer_description'] },
+      // attributes: { exclude: ['call_description', 'offer_description'] },
       include: [
         {
           model: Member,
@@ -16,14 +16,28 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
+    // Serialize data so the template can read it. This is the "cards" we use at meshboard.handlebars. 
     const cards = cardData.map((card) => card.get({ plain: true }));
+    // console.log(cards);
+
+    const cardCalls = cards.map((card) => {
+      return {id: card.id, call_category: card.call_category, call_keywords: card.call_keywords, username: card.member.username}
+      });
+    console.log(cardCalls);
+
+    const cardOffers = cards.map((card) => {
+      return {id: card.id, offer_category: card.offer_category, offer_keywords: card.offer_keywords, offer_description: card.offer_description, username: card.member.username}
+      });
+    console.log(cardOffers);
+
+
 
     // Pass serialized data and session flag into template. "req.session" is sort of a little environment where we can set up variables that can only exist within a user's session. "req.session.logged_in" specifies a "logged_in" variable. Then we define a property called logged_in and pass it to res.render so that variable will be rendered. It allows each user have data associated to their visit to the page. Where is this variable coming from? We initialized it at main.handlebars and homepage view includes it.
 
     // HOMEPAGE.HANDLEBARS has the view to our meshboard (rename or delete meshboard.handlebars)
-    res.render('meshboard', { 
-      cards, 
+    res.render('meshboard', {
+      cardCalls,
+      cardOffers, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -42,6 +56,7 @@ router.get('/meshcard/:id', async (req, res) => {
         },
         {
           model: Comment,
+          // right: true
           // attributes: ['call_comment', 'offer_comment', 'member_id', 'card_id'],
         },
       ],
@@ -49,7 +64,7 @@ router.get('/meshcard/:id', async (req, res) => {
 
     // ASK!!! WHY THIS IS DIFFERENT THAN THE SERIALIZE ABOVE - BECAUSE WE HAVE MANY CARDS VS SINGLE CARD?
     const card = cardData.get({ plain: true });
-
+    console.log(card);
     res.render('meshcard', {
       ...card,
       logged_in: req.session.logged_in
