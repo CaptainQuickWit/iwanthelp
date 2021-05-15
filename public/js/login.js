@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/member');
+      document.location.replace('/meshboard');
     } else {
       alert(response.statusText);
     }
@@ -38,17 +38,17 @@ const signupFormHandler = async (event) => {
 
   const email = document.querySelector('#email-signup').value.trim();
 
-  const school_and_program = document.querySelector('#school_and_program').value.trim();
+  const school_and_program = document.querySelector('#school_and_program-signup').value.trim();
 
   if (username && password && first_name && last_name && email && school_and_program) {
     const response = await fetch('/api/members', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password, first_name, last_name, email, school_and_program }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/member');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
