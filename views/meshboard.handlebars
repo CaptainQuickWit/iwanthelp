@@ -39,7 +39,7 @@
         <h4>Description of card</h4>
     </div>
 {{!-- This is the const "cards" we created at homeRoutes when we do serialize.  --}}
-  {{#each cards as |card|}}
-  {{> key-card card}}
+  {{#each cardCalls as |cardCall|}}
+  {{> key-card cardCall}}
   {{/each}}
 </div>
