@@ -38,8 +38,19 @@
         <h3>TITLE OF CARD</h3>
         <h4>Description of card</h4>
     </div>
-{{!-- This is the const "cards" we created at homeRoutes when we do serialize.  --}}
+{{!-- This is the const "cards" and then cardCalls we created at homeRoutes when we do serialize.  --}}
   {{#each cardCalls as |cardCall|}}
-  {{> key-card cardCall}}
+  {{> call-key cardCall}}
+  {{/each}}
+</div>
+
+<div>
+    <div class="card">
+        <h3>TITLE OF CARD</h3>
+        <h4>Description of card</h4>
+    </div>
+{{!-- This is the const "cards" and then cardOffers we created at homeRoutes when we do serialize.  --}}
+  {{#each cardOffers as |cardOffer|}}
+  {{> offer-key cardOffer}}
   {{/each}}
 </div>

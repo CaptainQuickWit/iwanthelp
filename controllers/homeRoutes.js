@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all cards and JOIN with  data
     const cardData = await Card.findAll({
-      attributes: { exclude: ['call_description', 'offer_description'] },
+      // attributes: { exclude: ['call_description', 'offer_description'] },
       include: [
         {
           model: Member,
@@ -21,9 +21,14 @@ router.get('/', async (req, res) => {
     // console.log(cards);
 
     const cardCalls = cards.map((card) => {
-    return {call_category: card.call_category, call_keywords: card.call_keywords, username: card.member.username}
-    });
+      return {id: card.id, call_category: card.call_category, call_keywords: card.call_keywords, username: card.member.username}
+      });
     console.log(cardCalls);
+
+    const cardOffers = cards.map((card) => {
+      return {id: card.id, offer_category: card.offer_category, offer_keywords: card.offer_keywords, offer_description: card.offer_description, username: card.member.username}
+      });
+    console.log(cardOffers);
 
 
 
@@ -31,7 +36,8 @@ router.get('/', async (req, res) => {
 
     // HOMEPAGE.HANDLEBARS has the view to our meshboard (rename or delete meshboard.handlebars)
     res.render('meshboard', {
-      cardCalls, 
+      cardCalls,
+      cardOffers, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -50,6 +56,7 @@ router.get('/meshcard/:id', async (req, res) => {
         },
         {
           model: Comment,
+          // right: true
           // attributes: ['call_comment', 'offer_comment', 'member_id', 'card_id'],
         },
       ],
@@ -57,7 +64,7 @@ router.get('/meshcard/:id', async (req, res) => {
 
     // ASK!!! WHY THIS IS DIFFERENT THAN THE SERIALIZE ABOVE - BECAUSE WE HAVE MANY CARDS VS SINGLE CARD?
     const card = cardData.get({ plain: true });
-
+    console.log(card);
     res.render('meshcard', {
       ...card,
       logged_in: req.session.logged_in

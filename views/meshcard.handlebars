@@ -3,7 +3,7 @@
 <div class="mesh-card">
   <div class="mesh-card-header">
     <!-- Below we are rendering the name of one mesh card using a Handlebars.js expression -->
-    {{card_name}}
+    {{member_id}}
   </div>
 </div>
 
@@ -20,8 +20,13 @@
     <input type="submit">
 </div>
 
+{{!-- MESHCARD DETAILS: all card details will be listed here, both CALL and OFFER--}}
 
-{{!-- Contact Info Field --}}
+<div>
+  {{offer_description}}
+</div>
+<br>
+{{!-- MEMBER DETAILS --}}
 <div class="contact-info-container">
   <div>
     <h2>
@@ -29,25 +34,30 @@
     </h2>
   </div>
     <div>
-      <ol>
+      <ul>
         <li>
-          Name:
+          First Name: {{member.first_name}}
         </li>
         <li>
-          Email:
+          Last Name: {{member.last_name}}
         </li>
         <li>
-          Phone Number:
+          Email: {{member.email}}
         </li>
         <li>
-          School-Program:
+          School-Program: {{member.school_and_program}}
         </li>
-      </ol>
+        <li>
+          Posted on: {{member.date_created}}
+        </li>
+      </ul>
     </div>
   </div>
 </div>
-
-
+{{!-- EXISTING COMMENTS --}}
+<div>
+  {{offer_description}}
+</div>
 {{!-- Buttons div: Add comment, update comment, save comment, mesh board, logout --}}
 <div class="buttons">
     <button>Add Comment</button>
