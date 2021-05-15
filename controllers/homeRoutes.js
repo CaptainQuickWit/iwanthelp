@@ -3,7 +3,8 @@ const { Comment, Card, Member } = require('../models');
 const withAuth = require('../utils/auth');
 
 // RENDERS meshboard.handlebars
-router.get('/meshboard', async (req, res) => {
+router.get('/meshboard', withAuth, async (req, res) => {
+  console.log('/meshboard route hit. Logged in: ', req.session.logged_in);
   try {
     // Get all cards and JOIN with  data
     const cardData = await Card.findAll({
@@ -45,7 +46,7 @@ router.get('/meshboard', async (req, res) => {
 });
 
 // RENDERS meshcard.handlebars
-router.get('/meshcard/:id', async (req, res) => {
+router.get('/meshcard/:id', withAuth, async (req, res) => {
   try {
     const cardData = await Card.findByPk(req.params.id, {
       include: [
@@ -75,7 +76,9 @@ router.get('/meshcard/:id', async (req, res) => {
 
 // RENDERS member.handlebars
 // Use withAuth middleware to prevent access to route
-router.get('/member', async (req, res) => {
+router.get('/member', withAuth, async (req, res) => {
+  console.log('/member route hit. Logged in: ', req.session.logged_in);
+
   try {
     // Find the logged in user based on the session ID
     const memberData = await Member.findByPk(req.session.member_id, {
@@ -96,6 +99,8 @@ router.get('/member', async (req, res) => {
 
 // RENDERS "LOGIN" PAGE (login.handlebars)
 router.get('/', (req, res) => {
+  console.log('/ route hit. Logged in: ', req.session.logged_in);
+
   // If the user is already logged in, hence req.sessions.logged_in is TRUE redirect the request to homepage at root.
   if (req.session.logged_in) {
     res.redirect('/meshboard');
