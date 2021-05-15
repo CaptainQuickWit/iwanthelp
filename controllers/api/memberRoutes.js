@@ -4,18 +4,24 @@ const withAuth = require('../../utils/auth');
 
 // CREATE new mesh account with "Member" model
 router.post('/', async (req, res) => {
+  console.log(req.body);
   try {
-    const memberData = await Member.create({
+    const newMember = await Member.create({
       username: req.body.username,
       password: req.body.password,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      school_and_program: req.body.school_and_program,
     });
 
 // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
-      req.session.member_id = memberData.id;
+      req.session.member_id = newMember.id;
+      req.session.username = newMember.username;
       req.session.logged_in = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(newMember);
     });
   } catch (err) {
     console.log(err);
@@ -45,14 +51,15 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.member_id = memberData.id;
+      req.session.username = memberData.username;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.json({ member: memberData, message: 'You are now logged in!' });
     });
 
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ message: 'No user account found!' });
   }
 });
 
@@ -67,21 +74,8 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// CREATE new member with "Member" model
-router.post('/', withAuth, async (req, res) => {
-  try {
-    const newMember = await Member.create({
-      ...req.body,
-      member_id: req.session.member_id,
-    });
-
-    res.status(200).json(newMember);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-// DELETE member account with "Member" model
+// DELETE existing mesh account with "Member" model
+// TO ASK !!!! member page has no id will it affect this?
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const memberData = await Member.destroy({
@@ -102,7 +96,6 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-// WE WILL ADD AN UPDATE ROUTE HERE!
-
+// WE WILL ADD AN UPDATE ACCOUNT ROUTE HERE!
 
 module.exports = router;

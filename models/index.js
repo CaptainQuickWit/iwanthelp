@@ -12,8 +12,6 @@ Member.hasMany(Card, {
   onDelete: 'CASCADE'
 });
 
-// ________________________________
-
 Comment.belongsTo(Member, {
   foreignKey: 'member_id',
   onDelete: 'CASCADE'
