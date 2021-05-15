@@ -85,6 +85,7 @@ router.get('/member', withAuth, async (req, res) => {
     });
 
     const member = memberData.get({ plain: true });
+    console.log(member),
     res.render('member', {
       ...member,
       logged_in: true

@@ -3,7 +3,7 @@
 ## **MESH**<br>
 <br>
 
-[https://heroku/link](https://heroku/link)<br>
+[https://project2mesh.herokuapp.com/](https://project2mesh.herokuapp.com/)<br>
 <br>
 <br>
 
@@ -26,6 +26,7 @@ https://github.com/Hannybiggs<br>
 https://github.com/CaptainQuickWit<br>
 
 * Ian S<br>
+http://github.com/Lolikerz<br>
 
 * Ali A<br>
 https://github.com/AranATA<br> 
