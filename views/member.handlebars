@@ -1,80 +1,66 @@
 {{!-- This div is for the top box. I've separated it into two separate divs; two buttons for one and then an ordered list for the others --}}
 
  <div>
-    <h2>NEW MESHCARD</h2>
+    <h1>Create New Meshcard</h1>
 
     <div>
       <button>ADD TO MESHBOARD</button>
       <button>REMOVE MESH CARD</button>
+      <button>LOGOUT</button>
+      <button>DELETE MEMBER</button>
     </div>
-
-    <div>
-      <ul>
-        <li>
-          <p>Logout</p>
-        </li>
-        <li>
-          <p>Delete Account</p>
-        </li>
-      </ul>
-    </div>
-
 
 {{!-- This div is for the three columns (member details, call or ask, and offer) --}}
 
 <div>
 
 {{!-- first card (member details) --}}
-  <div>
-    <h2>Member Details</h2>
-    <ul>
-      <li>
-        <label>
-          <input type="text" placeholder="First Name"/>
-        <label>
-      </li>
-      <li>
-        <label>
-          <input type="text" placeholder="Last Name"/>
-        <label>
-      </li>
-      <li>
-        <label>
-          <input type="text" placeholder="Email"/>
-        <label>
-      </li>
-      <li>
-        <select>
-          <option value="school">School Name</option>
-        </select>
-      </li>
-      <li>
-        <button>Update</button>
-      </li>
-    </ul>
+  <div class="d-inline-flex">
+  <div class="d-inline-flex">
+    <h2>
+      Contact Info
+    </h2>
   </div>
+    <div>
+      <ul>
+        <li>
+          First Name: {{first_name}}
+        </li>
+        <li>
+          Last Name: {{last_name}}
+        </li>
+        <li>
+          Email: {{email}}
+        </li>
+        <li>
+          School-Program: {{school_and_program}}
+        </li>
+        <li>
+          Posted on: {{date_created}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 {{!-- second card (call or ask) --}}
   <div>
-    <h2>Call or Ask</h2>
+    <h2>Call</h2>
     <ul>
       <li>
         <select>
-          <option value="category" placeholder="Category"/>Pick a category</option>
+          <option value="category" placeholder="Category"/>Pick Call Category</option>
         </select>
       </li>
       <li>
         <label>
-          <input type="text" placeholder="Keyword"/>
+          <input type="text" placeholder="Call Keywords (25 char)"/>
         <label>
       </li>
       <li>
-        <textarea>
-          Describe what you're asking for (max 500 characters)
+Call Description (150 char)
+         <textarea>
         </textarea>
-      </li>
-      <li>
-        <button>Update</button>
       </li>
     </ul>
   </div>
@@ -90,18 +76,18 @@
       </li>
       <li>
         <label>
-          <input type="text" placeholder="Keyword"/>
+          <input type="text" placeholder="Offer Keywords (25 char)"/>
         <label>
       </li>
       <li>
-        <textarea>
-          Describe what you're offering (max 500 characters)
+ Offer Description (150 char)
+         <textarea>
         </textarea>
       </li>
-      <li>
-        <button>Update</button>
-      </li>
     </ul>
+    <button>Save</button>
   </div>
 
 </div>
+
+<script src="./js/logout.js"></script>
