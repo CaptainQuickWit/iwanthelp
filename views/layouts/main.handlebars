@@ -1,35 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>MESH</title>
-  <!--
-  <style>
-    
-    div,
-    html,
-    body {height: 100%;}
-    h1   {color: blue;}
-    p    {color: red;}
-    body * {display: block; border: 1px solid green;}
-    body {display: block; border: 5px solid red;}
-    
-</style>-->
-<!-- DELETE STYLE ELEMENT AT THE END OF DRAFT-->
-<style>
-    body * { margin-top: 20px; min-height: 50px;}
-    #row2,#row3,#row4{border: 5px solid #bfbfbf; border-radius: 15px; }
-    nav * {display: block; border: 5px solid #bfbfbf; border-radius: 15px; padding: 20px; margin-bottom: 20px;}
-
-</style>
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/mesh/public/css/style.css">
-  <link rel="stylesheet" type="text/css" href="/mesh/public/css/style.css">
-   
-    
+
+  <style>
+    body * { margin-top: 20px; min-height: 50px;}
+    #row2,#row3,#row4{border: 5px solid #BFBFBF; border-radius: 15px; }
+    nav * {display: block; border: 5px solid #BFBFBF; border-radius: 15px; padding: 20px; margin-bottom: 20px;}
+  </style>
+  
 </head>
 
 <body class="p-5">
@@ -37,7 +21,6 @@
 <div>
     <!--THIS IS ROW 1 of 4
     <section class="container-fluid" id="row1">
-      
       <header class="jumbotron text-center mx-5" style="background-color: #7B68EE">
         <h1 class="">
           WELCOME TO MESH </h1>
@@ -50,26 +33,19 @@
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
       </div>
     </section>
-
-
     <!--{{!HERE COMES THE LOGIN REFERENCES FOR MESH}}-->
-    
     <!--THIS IS ROW 2 of 4-->
-    <section class="row container-fluid p-0 m-0" style="border: 5px solid #bfbfbf;" id="row2">
-      
+    <section class="row container-fluid p-0 m-0" style="border: 5px solid #BFBFBF;" id="row2">
         <!--the app description column -->
         <div class="col-12 col-md-8 p-0 m-0">
           App Description:
           <div class="d-flex p-0 m-0">
-            
             <!--Lorem as place holder we need another template here-->
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure excepturi molestiae rerum pariatur ad non unde magnam quisquam tempora nam vero quis voluptas numquam, sit illum cupiditate neque quidem.</p>
+            <p class="testing">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure excepturi molestiae rerum pariatur ad non unde magnam quisquam tempora nam vero quis voluptas numquam, sit illum cupiditate neque quidem.</p>
           </div>
         </div>
-
         <!--the login& create an account column -->
         <div class="col-12 col-md-4">
-
           <!-- divider contains log in/out/create account links as vertical flex box-->
           <div class="d-column" >
               {{#if logged_in}}
@@ -90,20 +66,15 @@
               </nav>
               {{/if}}
           </div>
-        
       </div>
     </section>
-
     <!--THIS IS ROW 3 of 4-->
-    <section style="background-color: #d9d9d9" id="row3">
+    <section style="background-color: #D9D9D9" id="row3">
       <main class="container-fluid" >
         <!-- All of our views will be placed in that place holder "body" and rendered -->
-        
         {{{ body }}}
-        
       </main>
     </section>
-
     <!--THIS IS ROW 4 of 4-->
     <section id="row4">
       <footer class="container-fluid">
@@ -112,6 +83,4 @@
     </section>
 </div>
 </body>
-
 </html>
-<script src="/js/logout.js"></script>
