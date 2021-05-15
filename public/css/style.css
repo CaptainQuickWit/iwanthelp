@@ -22,3 +22,32 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+/*used in main.handlebars, 
+in main.handlebars the main pages content is split up into 4 boxe's 
+and this css adds the border to box's 2 3 and 4 with this box's containing
+the pages content refered to as "rows" */
+#row2,#row3,#row4 {
+  border: 5px solid #bfbfbf; 
+  border-radius: 15px; 
+}
+
+/*used primarily for main.handlebars*/
+nav * {
+  display: block; 
+  border: 5px solid #bfbfbf; 
+  border-radius: 15px; 
+  padding: 20px; 
+  margin-bottom: 20px;
+}
+
+section {
+  background-color: #d9d9d9;
+}
+
+/*FOR TESTING DELETE ON FINAL DRAFT*/
+.buttons, .testing {
+  color: red;
+}
+
+

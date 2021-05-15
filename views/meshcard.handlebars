@@ -1,14 +1,22 @@
 {{!-- shows the meshcard that is displayed once a card is clicked --}}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
 
-<div class="mesh-card">
+</style>
+
+<div class="d-flex">
+
+<div class="d-inline-flex">
+
   <div class="mesh-card-header">
     <!-- Below we are rendering the name of one mesh card using a Handlebars.js expression -->
     {{member_id}}
   </div>
+
 </div>
 
 {{!-- Add comment field --}}
-<div class="comment-field">
+<div class="comment-field d-inline-flex">
     <form>
         Name: <input type="text" name="username">
     </form>
@@ -22,13 +30,13 @@
 
 {{!-- MESHCARD DETAILS: all card details will be listed here, both CALL and OFFER--}}
 
-<div>
+<div class="d-inline-flex">
   {{offer_description}}
 </div>
 <br>
 {{!-- MEMBER DETAILS --}}
-<div class="contact-info-container">
-  <div>
+<div class="d-inline-flex">
+  <div class="d-inline-flex">
     <h2>
       Contact Info
     </h2>
@@ -55,14 +63,17 @@
   </div>
 </div>
 {{!-- EXISTING COMMENTS --}}
-<div>
+<!--
+<div class="d-inline-flex">
   {{offer_description}}
-</div>
+</div> --> 
 {{!-- Buttons div: Add comment, update comment, save comment, mesh board, logout --}}
-<div class="buttons">
+<div class="buttons d-inline-flex">
     <button>Add Comment</button>
     <button>Update Comment</button> 
     <button>Save Comment</button>
     <button>Go back to Meshboard</button>
     <button>Logout</button>
+</div>
+
 </div>
