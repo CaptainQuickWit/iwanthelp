@@ -1,56 +1,103 @@
 {{!-- NEEDS TO BE UPDATED LATER. IT WILL SHOW ALL POSTED CARDS AND SEARCH FIELD  --}}
 
-{{!-- "Search Meshcards" box under header --}}
-<h1> Search Meshcards</h1>
-<div>
- <div>
-    <form action="/action_page.php">
-        <input type="checkbox" id="askOnlyCheckbox">
-        <label for="askOnlyCheckbox"> Asks Only</label><br>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <input type="checkbox" id="offersOnlyCheckbox">
-        <label for="askOnlyCheckbox"> Offers Only</label><br>
+<h1 class="text-center"> Search Meshcards</h1>
 
-        <input type="checkbox" id="skillsCheckbox">
-        <label for="askOnlyCheckbox"> Skills</label><br>
-
-        <input type="checkbox" id="knowledgeCheckbox">
-        <label for="askOnlyCheckbox"> Knowledge</label><br>
-
-        <input type="checkbox" id="ideasCheckbox">
-        <label for="askOnlyCheckbox"> Ideas</label><br>
-
-    </form>
- </div>
-
- <div>
-    <h2>Search by Title</h2>
-    <input type="text" name="titleSearch">
-    <input type="submit" value="Submit">
- </div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+        <h2>Search by Title</h2>
+        <input type="text" name="titleSearch">
+        <input type="submit" value="Submit">
+      </div>
+      <div class="col-md-6">
+        <form>
+          <input type="checkbox" id="askOnlyCheckbox">
+          <label for="askOnlyCheckbox"> Asks Only</label> <br>
+  
+          <input type="checkbox" id="offersOnlyCheckbox">
+          <label for="askOnlyCheckbox"> Offers Only</label>
+  
+          <input type="checkbox" id="skillsCheckbox">
+          <label for="askOnlyCheckbox"> Skills</label><br>
+  
+          <input type="checkbox" id="knowledgeCheckbox">
+          <label for="askOnlyCheckbox"> Knowledge</label>
+        
+          <input type="checkbox" id="ideasCheckbox">
+          <label for="askOnlyCheckbox"> Ideas</label><br>
+        </form>
+  </div>
+  
+  <div class="row meshboard">
+      <div class="col-md-6"><div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title">Offer Card</h5>
+          <p class="card-text">
+            {{#each cardOffers as |cardOffer|}}
+            {{> offer-key cardOffer}}
+            {{/each}}
+          </p>
+          <a href="#" class="btn btn-primary">See Offer</a>
+        </div>
+      </div></div>
+      <div class="col-md-6"><div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title">Ask Card</h5>
+          <p class="card-text">
+            {{#each cardCalls as |cardCall|}}
+            {{> call-key cardCall}}
+            {{/each}}
+          </p>
+          <a href="#" class="btn btn-primary">See Ask</a>
+        </div>
+      </div></div>
+      <div class="col-md-6"><div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title">Offer Card</h5>
+          <p class="card-text">
+            {{#each cardOffers as |cardOffer|}}
+            {{> offer-key cardOffer}}
+            {{/each}}
+          </p>
+          <a href="#" class="btn btn-primary">See Offer</a>
+        </div>
+      </div></div>
+      <div class="col-md-6"><div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title">Ask Card</h5>
+          <p class="card-text">
+            {{#each cardCalls as |cardCall|}}
+            {{> call-key cardCall}}
+            {{/each}}
+          </p>
+          <a href="#" class="btn btn-primary">See Ask</a>
+        </div>
+      </div></div>
+      <div class="col-md-6"><div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title">Offer Card</h5>
+          <p class="card-text">
+            {{#each cardOffers as |cardOffer|}}
+            {{> offer-key cardOffer}}
+            {{/each}}
+          </p>
+          <a href="#" class="btn btn-primary">See Offer</a>
+        </div>
+      </div></div>
+      <div class="col-md-6"><div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title">Ask Card</h5>
+          <p class="card-text">
+            {{#each cardCalls as |cardCall|}}
+            {{> call-key cardCall}}
+            {{/each}}
+          </p>
+          <a href="#" class="btn btn-primary">See Ask</a>
+        </div>
+      </div></div>
+  </div>
 </div>
 
 
-{{!-- "Board of all cards;"" this is where all of the cards will populate --}}
-
-<div>
-    <div class="card">
-        <h3>TITLE OF CARD</h3>
-        <h4>Description of card</h4>
-    </div>
-{{!-- This is the const "cards" and then cardCalls we created at homeRoutes when we do serialize.  --}}
-  {{#each cardCalls as |cardCall|}}
-  {{> call-key cardCall}}
-  {{/each}}
-</div>
-
-<div>
-    <div class="card">
-        <h3>TITLE OF CARD</h3>
-        <h4>Description of card</h4>
-    </div>
-{{!-- This is the const "cards" and then cardOffers we created at homeRoutes when we do serialize.  --}}
-  {{#each cardOffers as |cardOffer|}}
-  {{> offer-key cardOffer}}
-  {{/each}}
-</div>
