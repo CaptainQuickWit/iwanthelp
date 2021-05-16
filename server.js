@@ -1,5 +1,3 @@
-// MESH server.js
-
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -8,7 +6,6 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
-// const { Server } = require('node:http');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();

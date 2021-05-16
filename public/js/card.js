@@ -28,7 +28,7 @@ const newFormHandler = async (event) => {
   }
 };
 
-// REMOVING THE MESHCARD - ASK TA!!!!!!!!! about data-id? We need to assign a data (as data-id="1") attribute to the element holding the card.
+// REMOVING THE MESHCARD - about data-id? We need to assign a data (as data-id="1") attribute to the element holding the card.
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -45,7 +45,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-// these classes need to be added to the member.handlebar wherever the forms are.
 document
   .querySelector('.new-meshcard')
   .addEventListener('submit', newFormHandler);

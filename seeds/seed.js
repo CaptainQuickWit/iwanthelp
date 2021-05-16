@@ -23,7 +23,7 @@ const seedDatabase = async () => {
   for (const comment of commentData) {
     await Comment.create({
       ...comment,
-      // card_id: card[Math.floor(Math.random() * card.length)].id,
+      // card_id: card[Math.floor(Math.random() * card.length)].id, A car_id for each comment will be useful but failed here!
       member_id: members[Math.floor(Math.random() * members.length)].id,
     });
   }
