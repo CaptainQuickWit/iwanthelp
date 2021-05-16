@@ -41,13 +41,12 @@ nav * {
   margin-bottom: 20px;
 }
 
-section {
-  background-color: #d9d9d9;
+.form-input, .form-group{
+  padding:0%;
+  margin:0%;
 }
 
-/*FOR TESTING DELETE ON FINAL DRAFT*/
-.buttons, .testing {
-  color: red;
-}
+
+
 
 

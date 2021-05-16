@@ -1,56 +1,85 @@
 {{!-- // MESH LOGIN AND SIGNUP VIEW --}}
 
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="username-login">Username:</label>
-        <input class="form-input" type="text" id="username-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Login</button>
-      </div>
-    </form>
-  </div>
-  
-  <div class="col-md-6">
-    <h2>Signup</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">First Name:</label>
-        <input class="form-input" type="firstname" id="first_name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Last Name:</label>
-        <input class="form-input" type="lastname" id="last_name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">School-Program:</label>
-        <input class="form-input" type="schoolprogram" id="school_and_program-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Sign-up</button>
-      </div>
-    </form>
-  </div>
-</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<section class="row container-fluid" style="border: 5px solid #BFBFBF; border-radius: 15px; background-color: #D9D9D9" id="row2">
+        <!--the app description column -->
+          App Description:
+          <div class="d-flex">
+            <!--Lorem as place holder we need another template here-->
+            <p class="testing">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure excepturi molestiae rerum pariatur ad non unde magnam quisquam tempora nam vero quis voluptas numquam, sit illum cupiditate neque quidem.</p>
+          </div>
+</section>
+
+    <section style ="background-color: #D9D9D9" id="row2">
+      <!-- this main tag contains entire content of the login cards-->
+      <main class="container-fluid" >
+                <!-- All of our views will be placed in that place holder "body" and rendered -->
+          <div class="row">
+            <!-- this flex column is to help center the login -->
+            
+            <div class="col-md-6">
+              <div class="d-flex justify-content-center">
+                <h2>Login</h2>
+                <form class="form login-form">
+                <div class="form-group">
+                  <label for="username-login">Username:</label>
+                  <input class="form-input" type="text" id="username-login" />
+                </div>
+                <div class="form-group">
+                  <label for="password-login">Password:</label>
+                  <input class="form-input" type="password" id="password-login" />
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary" type="submit">Login</button>
+                </div>
+                </form>
+              </div>
+              </div>
+            
+                  <!-- the sign up form-->
+            <div class="col-md-6 px-0 mx-0">
+                  <div class="d-flex justify-content-center">
+                    <h2>Signup</h2>
+                    <form class="form signup-form">
+                      <div class="form-group">
+                        <label for="username-signup">Username:</label>
+                        <input class="form-input" type="text" id="username-signup" />
+                      </div>
+                      <div class="form-group">
+                        <label for="password-signup">Password:</label>
+                        <input class="form-input" type="password" id="password-signup" />
+                      </div>
+                      <div class="form-group">
+                        <label for="password-signup">First Name:</label>
+                        <input class="form-input" type="firstname" id="first_name-signup" />
+                      </div>
+                      <div class="form-group">
+                        <label for="password-signup">Last Name:</label>
+                        <input class="form-input" type="lastname" id="last_name-signup" />
+                      </div>
+                      <div class="form-group">
+                        <label for="password-signup">Email:</label>
+                        <input class="form-input" type="text" id="email-signup" />
+                      </div>
+                      <div class="form-group">
+                        <label for="password-signup">School-Program:</label>
+                        <input class="form-input" type="schoolprogram" id="school_and_program-signup" />
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Sign-up</button>
+                      </div>
+                    </form>
+                  </div>
+            </div>
+                <!-- this main tag contains entire content of the login cards-->
+          </div>
+      </main>
+    </section>
+      
+
 
 <script src="./js/login.js"></script>
+

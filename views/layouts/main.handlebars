@@ -7,7 +7,8 @@
   <title>MESH</title>
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <!--
+  <link rel="stylesheet" href="/css/style.css"> -->
   <style>
     body * { margin-top: 20px; min-height: 50px;}
     #row2,#row3,#row4{border: 5px solid #BFBFBF; border-radius: 15px; }
@@ -16,70 +17,22 @@
   
 </head>
 
-<body class="p-5">
+<body>
   <!-- class="container-fluid w-100 vh-100" if not needed later then delete this div-->
-<div>
-    <!--THIS IS ROW 1 of 4
-    <section class="container-fluid" id="row1">
-      <header class="jumbotron text-center mx-5" style="background-color: #7B68EE">
-        <h1 class="">
-          WELCOME TO MESH </h1>
-      </header>
-    </section>-->
-    <!-- THIS IS ROW 1 of 4; THIS ROW IS A JUMBOTRON-->
+<div class ="p-5">
+    <!-- THIS IS THE FIRST SECTION; THIS SECTION IS A JUMBOTRON-->
     <section class="jumbotron jumbotron-fluid rounded py-0" style="background-color: #7B68EE ;border-radius: 15px;" >
       <div class="container">
         <h1 class="display-4">WELCOME TO MESH!</h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
       </div>
     </section>
-    <!--{{!HERE COMES THE LOGIN REFERENCES FOR MESH}}-->
-    <!--THIS IS ROW 2 of 4-->
-    <section class="row container-fluid p-0 m-0" style="border: 5px solid #BFBFBF;" id="row2">
-        <!--the app description column -->
-        <div class="col-12 col-md-8 p-0 m-0">
-          App Description:
-          <div class="d-flex p-0 m-0">
-            <!--Lorem as place holder we need another template here-->
-            <p class="testing">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure excepturi molestiae rerum pariatur ad non unde magnam quisquam tempora nam vero quis voluptas numquam, sit illum cupiditate neque quidem.</p>
-          </div>
-        </div>
-        <!--the login& create an account column -->
-        <div class="col-12 col-md-4">
-          <!-- divider contains log in/out/create account links as vertical flex box-->
-          <div class="d-column" >
-              {{#if logged_in}}
-              <nav>
-                <a href="/member">My Account</a>
-              </nav>
-              <!-- two elements in this div-->
-              <nav>
-                <button id="logout" class="btn-no-style">Logout</button>
-              </nav>
-              {{else}}
-              <nav>
-                <a href="/login">Login</a>
-              </nav>
-              <!-- two elements in this div-->
-              <nav>
-                <a href="/signup">Create an Account</a>
-              </nav>
-              {{/if}}
-          </div>
-      </div>
-    </section>
-    <!--THIS IS ROW 3 of 4-->
-    <section style="background-color: #D9D9D9" id="row3">
+    <!--THIS IS THE LAST SECTION WHICH CONTAINS THE MAIN CONTENT TO BE RENDERED BY {{{BODY}}}-->
+    <section>
       <main class="container-fluid" >
         <!-- All of our views will be placed in that place holder "body" and rendered -->
         {{{ body }}}
       </main>
-    </section>
-    <!--THIS IS ROW 4 of 4-->
-    <section id="row4">
-      <footer class="container-fluid">
-        <p>Team Info and Links:</p>
-    </footer>
     </section>
 </div>
 </body>
