@@ -74,7 +74,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// DELETE existing mesh account with "Member" model
+// DELETE existing mesh member with "Member" model
 // TO ASK !!!! member page has no id will it affect this?
 router.delete('/:id', withAuth, async (req, res) => {
   try {

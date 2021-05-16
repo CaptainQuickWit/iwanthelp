@@ -1,5 +1,4 @@
-// CHECK WITH HANDLEBARS
-// LOGIN (revised)
+// LOGIN 
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -24,7 +23,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
-// SIGNUP (revised)
+// SIGNUP 
 const signupFormHandler = async (event) => {
   event.preventDefault();
 

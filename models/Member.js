@@ -25,17 +25,16 @@ class Member extends Model {
       allowNull: false,
       validate: {
         len: [8],
+        // TO DO! how to check the password lenght?
       },
     },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      // defaultValue: '',
     },
     last_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      // defaultValue: '',
     },
     
     // TO DO! email belongs to the school so it must end with --unc.edu
@@ -51,7 +50,6 @@ class Member extends Model {
     school_and_program: {
       type: DataTypes.STRING,
       allowNull: false,
-      // defaultValue: '',
     },
     date_created: {
       type: DataTypes.DATEONLY,
