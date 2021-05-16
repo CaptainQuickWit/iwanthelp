@@ -31,7 +31,23 @@
 {{!-- MESHCARD DETAILS: all card details will be listed here, both CALL and OFFER--}}
 
 <div class="d-inline-flex">
-  {{offer_description}}
+  <ul>
+        <li>
+          Call Category: {{call_category}}
+        </li>
+        <li>
+          Call description: {{call_description}}
+        </li>
+        <li>
+          Offer Category: {{offer_category}}
+        </li>
+        <li>
+          Offer Description: {{offer_description}}
+        </li>
+        <li>
+          Posted on: {{date_created}}
+        </li>
+      </ul>
 </div>
 <br>
 {{!-- MEMBER DETAILS --}}
@@ -56,7 +72,7 @@
           School-Program: {{member.school_and_program}}
         </li>
         <li>
-          Posted on: {{member.date_created}}
+          Member since: {{member.date_created}}
         </li>
       </ul>
     </div>

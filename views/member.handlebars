@@ -5,8 +5,7 @@
 
     <div>
       <button>ADD TO MESHBOARD</button>
-      <button>REMOVE MESH CARD</button>
-      <button>LOGOUT</button>
+      <button>REMOVE MESHCARD</button>
       <button>DELETE MEMBER</button>
     </div>
 
@@ -14,7 +13,7 @@
 
 <div>
 
-{{!-- first card (member details) --}}
+{{!-- member details --}}
   <div class="d-inline-flex">
   <div class="d-inline-flex">
     <h2>
@@ -43,51 +42,47 @@
   </div>
 </div>
 
-{{!-- second card (call or ask) --}}
-  <div>
-    <h2>Call</h2>
-    <ul>
-      <li>
-        <select>
-          <option value="category" placeholder="Category"/>Pick Call Category</option>
-        </select>
-      </li>
-      <li>
-        <label>
-          <input type="text" placeholder="Call Keywords (25 char)"/>
-        <label>
-      </li>
-      <li>
-Call Description (150 char)
-         <textarea>
-        </textarea>
-      </li>
-    </ul>
-  </div>
 
-{{!-- third card (offer) --}}
-  <div>
-    <h2>Offer</h2>
-    <ul>
-      <li>
-        <select>
-          <option value="category" placeholder="Category"/>Pick a category</option>
-        </select>
-      </li>
-      <li>
-        <label>
-          <input type="text" placeholder="Offer Keywords (25 char)"/>
-        <label>
-      </li>
-      <li>
- Offer Description (150 char)
-         <textarea>
+{{!-- Call and Offer Form --}}
+<div class="col-md-6">
+  <h2>Call and Offer</h2>
+  <form class="form new-meshcard">
+      
+      <div class="form-group">
+        <label for="call-category">Category:</label>
+        <input class="form-input" type="text" id="call-category" />
+      </div>
+      
+      <div class="form-group">
+        <label for="call-keywords">Keywords (max 25 char):</label>
+        <input class="form-input" type="text" id="call-keywords" />
+      </div>
+      
+      <div class="form-group">
+        <label for="call-description">Description (max 150 char):</label>
+        <textarea class="form-input" type="call-description" id="call-description">
         </textarea>
-      </li>
-    </ul>
-    <button>Save</button>
-  </div>
 
+      <div class="form-group">
+        <label for="offer-category">Category:</label>
+        <input class="form-input" type="text" id="offer-category" />
+      </div>
+      
+      <div class="form-group">
+        <label for="offer-keywords">Keywords (max 25 char):</label>
+        <input class="form-input" type="offer-keywords" id="offer-keywords" />
+      </div>
+      
+      <div class="form-group">
+        <label for="offer-description">Description (max 150 char):</label>
+        <textarea class="form-input" type="offer-description" id="offer-description">
+        </textarea>
+      </div>
+     <div class="form-group">
+        <button class="btn btn-primary" type="submit">Save Meshcard</button>
+      </div>
+    </form>
 </div>
 
 <script src="./js/logout.js"></script>
+<script src="./js/card.js"></script>
