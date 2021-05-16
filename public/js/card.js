@@ -11,7 +11,7 @@ const newFormHandler = async (event) => {
   const offer_keywords = document.querySelector('#offer-keywords').value.trim();
   const offer_description = document.querySelector('#offer-description').value.trim();
 
-  if (call_category && call_keywords && call_description &&offer_category && offer_keywords && offer_description ) {
+  if (call_category && call_keywords && call_description && offer_category && offer_keywords && offer_description ) {
     const response = await fetch(`/api/cards`, {
       method: 'POST',
       body: JSON.stringify({ call_category, call_keywords, call_description, offer_category, offer_keywords, offer_description }),
@@ -21,7 +21,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/member');
+      document.location.replace('/meshboard');
     } else {
       alert('Failed to create your meshcard');
     }
@@ -47,9 +47,9 @@ const delButtonHandler = async (event) => {
 
 // these classes need to be added to the member.handlebar wherever the forms are.
 document
-  .querySelector('.new-card-form')
+  .querySelector('.new-meshcard')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.card-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.card-list')
+//   .addEventListener('click', delButtonHandler);
