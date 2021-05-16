@@ -6,7 +6,7 @@ let sequelize;
 if (process.env.JAWSDB_URL) {
   //y5svr1t2r5xudqeq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
   //process.env.JAWSDB_URL
-  sequelize = new Sequelize("y5svr1t2r5xudqeq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com");
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
