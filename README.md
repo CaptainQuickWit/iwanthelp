@@ -11,7 +11,7 @@
 
 *** 
 In this project our team focuses on creating a website based on the concept of "reciprocity circle", where you can seek help for something by posting something in return that other users can benefit from. Scaled for a university setting; a student in a university community can become a member and help with something. However, instead of paying for it the student would offer with her/his own resources or expertise in return.<br>
-This is a CMS-style site similar to a Wordpress site, where members can publish their posts and comments on other members’ posts as well. App is following the MVC paradigm in its architectural structure, and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. It also introduces "Granim.js" as a new technology to enhance CSS coding with gradient effects. It is deployed to Heroku.  
+This is a CMS-style site similar to a Wordpress site, where members can publish their posts and comments on other members’ posts as well. App is following the MVC paradigm in its architectural structure, and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. It also introduces "Granim.js" as a new technology to enhance Bootstrap CSS coding with gradient effects. Mesh is successfully deployed to Heroku and available at the link above.  
 <br>
 <br>
 
@@ -40,7 +40,7 @@ https://github.com/AranATA<br>
 Wireframe representation of the functionality of the MESH app:<br>
 <br>
 
-![alt text](/public/images/wireframe.png)
+![alt text](public/images/wireframe.png)
 
 <br>
 <br>
@@ -48,7 +48,7 @@ Wireframe representation of the functionality of the MESH app:<br>
 Under the link below you will find a walkthrough video that demonstrates the functionality of the app. <br>
 If the video appears out of focus please hit the space bar twice.
 
-[https://drive.google.com/file/](https://drive.google.com/file/)
+[https://drive.google.com/file/d/1RW3witwQsLMG7EKt7zOY7AUuiBilkU4R/view](https://drive.google.com/file/d/1RW3witwQsLMG7EKt7zOY7AUuiBilkU4R/view)
 
 <br>
 <br>

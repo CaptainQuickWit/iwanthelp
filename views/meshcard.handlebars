@@ -1,62 +1,53 @@
 {{!-- shows the meshcard that is displayed once a card is clicked --}}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<style>
-
-</style>
+{{!--
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
+<h2>
+  MESHCARD #{{id}}
+</h2>
 
 <div class="d-flex">
 
-<div class="d-inline-flex">
+  {{!-- <div class="d-inline-flex">
 
-  <div class="mesh-card-header">
-    <!-- Below we are rendering the name of one mesh card using a Handlebars.js expression -->
-    {{member_id}}
-  </div>
+    <div class="mesh-card-header">
 
-</div>
+    </div>
 
-{{!-- Add comment field --}}
-<div class="comment-field d-inline-flex">
-    <form>
-        Name: <input type="text" name="username">
-    </form>
+  </div> --}}
 
-    <textarea maxlength="150">
-        Add a comment (up to 150 characters)
-    </textarea>
-    
-    <input type="submit">
-</div>
+  {{!-- MESHCARD DETAILS: all card details will be listed here, both CALL and OFFER--}}
 
-{{!-- MESHCARD DETAILS: all card details will be listed here, both CALL and OFFER--}}
-
-<div class="d-inline-flex">
-  <ul>
-        <li>
-          Call Category: {{call_category}}
-        </li>
-        <li>
-          Call description: {{call_description}}
-        </li>
-        <li>
-          Offer Category: {{offer_category}}
-        </li>
-        <li>
-          Offer Description: {{offer_description}}
-        </li>
-        <li>
-          Posted on: {{date_created}}
-        </li>
-      </ul>
-</div>
-<br>
-{{!-- MEMBER DETAILS --}}
-<div class="d-inline-flex">
   <div class="d-inline-flex">
     <h2>
-      Contact Info
+      Meshcard:
     </h2>
+    <ul>
+      <li>
+        Call Category: {{call_category}}
+      </li>
+      <li>
+        Call description: {{call_description}}
+      </li>
+      <li>
+        Offer Category: {{offer_category}}
+      </li>
+      <li>
+        Offer Description: {{offer_description}}
+      </li>
+      <li>
+        Posted on: {{date_created}}
+      </li>
+    </ul>
   </div>
+  <br>
+  {{!-- MEMBER DETAILS --}}
+  <div class="d-inline-flex">
+    <div class="d-inline-flex">
+      <h2>
+        Contact:
+      </h2>
+    </div>
     <div>
       <ul>
         <li>
@@ -77,19 +68,19 @@
       </ul>
     </div>
   </div>
-</div>
-{{!-- EXISTING COMMENTS --}}
-<!--
-<div class="d-inline-flex">
-  {{offer_description}}
-</div> --> 
-{{!-- Buttons div: Add comment, update comment, save comment, mesh board, logout --}}
-<div class="buttons d-inline-flex">
-    <button>Add Comment</button>
-    <button>Update Comment</button> 
-    <button>Save Comment</button>
-    <button>Go back to Meshboard</button>
-    <button>Logout</button>
-</div>
 
+  <div class="comment-field d-inline-flex">
+    {{!-- <form>
+      Name: <input type="text" name="username">
+    </form> --}}
+    <textarea maxlength="150">Add a comment (up to 150 chars)  
+    </textarea>
+  </div>
+
+</div>
+<div>
+  <a href="/meshboard">Meshboard Page</a>
+  <div class="buttons d-inline-flex">
+    <button>Save Comment</button>
+  </div>
 </div>

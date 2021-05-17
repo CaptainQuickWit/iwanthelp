@@ -1,66 +1,75 @@
-{{!-- NEEDS TO BE UPDATED LATER. IT WILL SHOW ALL POSTED CARDS AND SEARCH FIELD  --}}
+{{!-- NEEDS TO BE UPDATED LATER. IT WILL SHOW ALL POSTED CARDS AND SEARCH FIELD --}}
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <h1 class="text-center"> Search Meshcards</h1>
-      <div class="form-group">
-<a href="/member">Member Page</a>
+<div class="form-group">
+  <a href="/member">Member Page</a>
+<div></div>
+  <button class="btn btn-primary" type="submit" id="logout">Logout</button>
+</div>
 
-        {{!-- <button class="btn btn-primary" type="submit" id="logout">Member Page</button> --}}
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit" id="logout">Logout</button>
-      </div>
+{{!-- UNFINISHED SEARCH FIELD CODE --}}
+
+{{!-- <div class="form-group">
+  <button class="btn btn-primary" type="submit" id="logout">Logout</button>
+</div>
 <div class="container">
   <div class="row">
-      <div class="col-md-6">
-        <h2>Search by Title</h2>
-        <input type="text" name="titleSearch">
-        <input type="submit" value="Submit">
-      </div>
-      <div class="col-md-6">
-        <form>
-          <input type="checkbox" id="askOnlyCheckbox">
-          <label for="askOnlyCheckbox"> Asks Only</label> <br>
-  
-          <input type="checkbox" id="offersOnlyCheckbox">
-          <label for="askOnlyCheckbox"> Offers Only</label>
-  
-          <input type="checkbox" id="skillsCheckbox">
-          <label for="askOnlyCheckbox"> Skills</label><br>
-  
-          <input type="checkbox" id="knowledgeCheckbox">
-          <label for="askOnlyCheckbox"> Knowledge</label>
-        
-          <input type="checkbox" id="ideasCheckbox">
-          <label for="askOnlyCheckbox"> Ideas</label><br>
-        </form>
-  </div>
-  
-  <div class="row meshboard">
-      <div class="col-md-6"><div class="card" style="width: 35rem;">
+    <div class="col-md-6">
+      <h3>Search by Username</h3>
+      <input type="text" name="titleSearch">
+      <input type="submit" value="Submit">
+    </div>
+    <div class="col-md-6">
+      <form>
+        <input type="checkbox" id="askOnlyCheckbox">
+        <label for="askOnlyCheckbox"> Asks Only</label> <br>
+
+        <input type="checkbox" id="offersOnlyCheckbox">
+        <label for="askOnlyCheckbox"> Offers Only</label>
+
+        <input type="checkbox" id="skillsCheckbox">
+        <label for="askOnlyCheckbox"> Skills</label><br>
+
+        <input type="checkbox" id="knowledgeCheckbox">
+        <label for="askOnlyCheckbox"> Knowledge</label>
+
+        <input type="checkbox" id="ideasCheckbox">
+        <label for="askOnlyCheckbox"> Ideas</label><br>
+      </form>
+    </div> --}}
+
+<div class="d-flex">
+  <div class="d-inline-flex" >
+
+    <div class="col-md-5">
+      <div class="card" style="width: 35rem;">
         <div class="card-body">
-          <h5 class="card-title">Offer Card</h5>
+          <h3 class="card-title">OFFERS</h3>
           <p class="card-text">
             {{#each cardOffers as |cardOffer|}}
             {{> offer-key cardOffer}}
             {{/each}}
           </p>
-          <a href="#" class="btn btn-primary">See Offer</a>
         </div>
-      </div>
-      <div class="col-md-6"><div class="card" style="width: 35rem;">
+      </div>    
+    </div>
+    
+    <div class="col-md-5">
+      <div class="card" style="width: 35rem;">
         <div class="card-body">
-          <h5 class="card-title">Ask Card</h5>
+          <h3 class="card-title">CALLS</h3>
           <p class="card-text">
             {{#each cardCalls as |cardCall|}}
             {{> call-key cardCall}}
             {{/each}}
           </p>
-        </div>
-      </div>    
+        </div>      
+      </div>
+    </div>
+
   </div>
-
 </div>
-
 <script src="./js/logout.js"></script>
