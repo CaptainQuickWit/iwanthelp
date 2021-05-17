@@ -1,0 +1,13 @@
+#canvas-colorful {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  width: 95%;
+  height: 20.5%;
+  top: 0;
+
+  /* background-image:url("../images/students02.jpg");
+  background-attachment:scroll;
+  background-position: 50%; 
+  opacity: .50; */
+}

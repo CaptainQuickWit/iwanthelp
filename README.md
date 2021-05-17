@@ -11,7 +11,7 @@
 
 *** 
 In this project our team focuses on creating a website based on the concept of "reciprocity circle", where you can seek help for something by posting something in return that other users can benefit from. Scaled for a university setting; a student in a university community can become a member and help with something. However, instead of paying for it the student would offer with her/his own resources or expertise in return.<br>
-This is a CMS-style site similar to a Wordpress site, where members can publish their posts and comments on other members’ posts as well. App is following the MVC paradigm in its architectural structure, and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. It also introduces "Animista" as a new technology to enhance CSS coding. It is deployed to Heroku.  
+This is a CMS-style site similar to a Wordpress site, where members can publish their posts and comments on other members’ posts as well. App is following the MVC paradigm in its architectural structure, and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. It also introduces "Granim.js" as a new technology to enhance CSS coding with gradient effects. It is deployed to Heroku.  
 <br>
 <br>
 
@@ -56,7 +56,7 @@ If the video appears out of focus please hit the space bar twice.
 A screenshot that shows the full generated web page:<br>
 <br>
 
-![alt text](/images/scrshot-mesh.png)
+![alt text](public/images/scrshot-mesh.png)
 
 <br>
 <br>
@@ -73,6 +73,8 @@ These notes and links are listing some valuable references among others that I u
 [https://zetcode.com/javascript/sequelize/](https://zetcode.com/javascript/sequelize/)
 
 [https://handlebarsjs.com/](https://handlebarsjs.com/)
+
+[https://sarcadass.github.io/granim.js/](https://sarcadass.github.io/granim.js/)
 
 [https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)
 

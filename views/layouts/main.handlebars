@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MESH</title>
-  
+  <title>Home | MESH</title>
+  <link rel="stylesheet" href="/css/granim style.css">
+  <link href="/images/favicon.ico" rel="shortcut icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!--
   <link rel="stylesheet" href="/css/style.css"> -->
@@ -14,20 +15,28 @@
     #row2,#row3,#row4{border: 5px solid #BFBFBF; border-radius: 15px; }
     nav * {display: block; border: 5px solid #BFBFBF; border-radius: 15px; padding: 20px; margin-bottom: 20px;}
   </style>
-  
+
 </head>
 
 <body>
+  {{!-- GRANIM SCRIPT --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js" integrity="sha512-CmlPTWm5+a1Gt2YSNk2rGZVvbH3Zge6imS7M4/vrhC8d+A1RcehmLxWMqUdv8aEu7pwfTo74EtnrR+8Cf8KdCA==" crossorigin="anonymous"></script>
   <!-- class="container-fluid w-100 vh-100" if not needed later then delete this div-->
-<div class ="p-5">
+<div class ="p-5" style="margin-top: 180px;">
     <!-- THIS IS THE FIRST SECTION; THIS SECTION IS A JUMBOTRON-->
     <section class="jumbotron jumbotron-fluid rounded py-0" style="background-color: #7B68EE ;border-radius: 15px;" >
       <div class="container">
         <h1 class="display-4">WELCOME TO MESH!</h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
       </div>
-
     </section>
+<div>
+        {{!-- granim canvas --}}
+       <canvas id="canvas-colorful" >
+       
+       </canvas> 
+</div>
+
     <!--THIS IS THE LAST SECTION WHICH CONTAINS THE MAIN CONTENT TO BE RENDERED BY {{{BODY}}}-->
     <section>
       <main class="container-fluid" >
@@ -36,5 +45,8 @@
       </main>
     </section>
 </div>
+<script src="/js/granim.min.js"></script>
+
 </body>
+
 </html>
