@@ -1,89 +1,87 @@
 {{!-- This div is for the top box. I've separated it into two separate divs; two buttons for one and then an ordered list for the others --}}
-
- <div>
-    <h1>Create New Meshcard</h1>
-
-    {{!-- <div>
-      <button>REMOVE MESHCARD</button>
-      <button>DELETE MEMBER</button>
-    </div> --}}
-
-{{!-- This div is for the three columns (member details, call or ask, and offer) --}}
-
 <div>
+  <div>
+   <a href="/meshboard">Meshboard Page</a>
+  </div>
+  <h1>Create New Meshcard</h1>
+    {{!-- <button>DELETE MEMBER</button> --}}
+    {{!-- This div is for the three columns (member details, call or ask, and offer) --}}
+</div>
 
 {{!-- member details --}}
+<div class="d-flex">
   <div class="d-inline-flex">
-  <div class="d-inline-flex">
-    <h2>
-      Member Details
-    </h2>
-  </div>
-    <div>
-      <ul>
-        <li>
-          First Name: {{first_name}}
-        </li>
-        <li>
-          Last Name: {{last_name}}
-        </li>
-        <li>
-          Email: {{email}}
-        </li>
-        <li>
-          School-Program: {{school_and_program}}
-        </li>
-        <li>
-          Posted on: {{date_created}}
-        </li>
-      </ul>
+    <div class="col-md-6">
+      <h2>
+        Member Details
+      </h2>
+  
+      <div>
+        <ul>
+          <li>
+            First Name: {{first_name}}
+          </li>
+          <li>
+            Last Name: {{last_name}}
+          </li>
+          <li>
+            Email: {{email}}
+          </li>
+          <li>
+            School-Program: {{school_and_program}}
+          </li>
+          <li>
+            Member since: {{date_created}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    {{!-- Call and Offer Form --}}
+    <div class="col-md-6">
+      <h2>Meshcard CALL and OFFER Form</h2>
+      <form class="form new-meshcard">
+      
+        <div class="form-group">
+          <label for="call-category">Call Category:</label>
+          <input class="form-input" type="text" id="call-category" />
+        </div>
+        
+        <div class="form-group">
+          <label for="call-keywords">Call Keywords (max 25 char):</label>
+          <input class="form-input" type="text" id="call-keywords" />
+        </div>
+        
+        <div class="form-group">
+          <label for="call-description">Call Description (max 150 char):</label>
+          <textarea class="form-input" type="call-description" id="call-description">
+          </textarea>
+
+        <div class="form-group">
+          <label for="offer-category">Offer Category:</label>
+          <input class="form-input" type="text" id="offer-category" />
+        </div>
+        
+        <div class="form-group">
+          <label for="offer-keywords">Offer Keywords (max 25 char):</label>
+          <input class="form-input" type="offer-keywords" id="offer-keywords" />
+        </div>
+      
+        <div class="form-group">
+          <label for="offer-description">Offer Description (max 150 char):</label>
+          <textarea class="form-input" type="offer-description" id="offer-description">
+          </textarea>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Save Meshcard</button>
+        </div>
+      </form>
     </div>
   </div>
-</div>
-
-
-{{!-- Call and Offer Form --}}
-<div class="col-md-6">
-  <h2>Call and Offer</h2>
-  <form class="form new-meshcard">
-      
-      <div class="form-group">
-        <label for="call-category">Category:</label>
-        <input class="form-input" type="text" id="call-category" />
-      </div>
-      
-      <div class="form-group">
-        <label for="call-keywords">Keywords (max 25 char):</label>
-        <input class="form-input" type="text" id="call-keywords" />
-      </div>
-      
-      <div class="form-group">
-        <label for="call-description">Description (max 150 char):</label>
-        <textarea class="form-input" type="call-description" id="call-description">
-        </textarea>
-
-      <div class="form-group">
-        <label for="offer-category">Category:</label>
-        <input class="form-input" type="text" id="offer-category" />
-      </div>
-      
-      <div class="form-group">
-        <label for="offer-keywords">Keywords (max 25 char):</label>
-        <input class="form-input" type="offer-keywords" id="offer-keywords" />
-      </div>
-      
-      <div class="form-group">
-        <label for="offer-description">Description (max 150 char):</label>
-        <textarea class="form-input" type="offer-description" id="offer-description">
-        </textarea>
-      </div>
-     <div class="form-group">
-        <button class="btn btn-primary" type="submit">Save Meshcard</button>
-      </div>
-    </form>
-</div>
-
- <button>My Meshcards</button>
+</div> 
+{{!-- this is unfinished --}}
+ {{!-- <button>My Meshcards</button> --}}
 
 <script src="./js/logout.js"></script>
 <script src="./js/card.js"></script>
