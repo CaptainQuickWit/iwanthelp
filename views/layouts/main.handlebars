@@ -32,6 +32,13 @@
       padding: 20px;
       margin-bottom: 20px;
     }
+
+    #top {
+      position: sticky;
+      top: 0;
+      background-color: #7B68EE;
+      z-index: 1;
+    }
   </style>
 
 </head>
@@ -45,10 +52,11 @@
   <!-- class="container-fluid w-100 vh-100" if not needed later then delete this div-->
   <div class="p-5" style="margin-top: 180px;">
     <!-- THIS IS THE FIRST SECTION; THIS SECTION IS A JUMBOTRON-->
-    <section class="jumbotron jumbotron-fluid rounded py-0" style="background-color: #7B68EE; border-radius: 15px; width:100%">
+    <section class="jumbotron jumbotron-fluid rounded py-0" style="background-color: #7B68EE; border-radius: 15px; width:100%" id="top">
       <div class="container">
-        <h1 class="display-4">WELCOME TO MESH</h1>
-        <p class="lead">"one for all, all for one"</p>
+            
+            <h1 class="display-4">WELCOME TO MESH</h1>
+            <p class="lead">"one for all, all for one"</p>
       </div>
     </section>
 
